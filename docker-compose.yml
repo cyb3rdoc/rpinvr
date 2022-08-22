@@ -1,0 +1,12 @@
+version: '3.6'
+services:
+  rpinvr:
+    container_name: rpinvr
+    hostname: rpinvr
+    image: hum8lefool/rpinvr:alpine
+    volumes:
+      - ./volumes/rpinvr/config:/usr/src/app/config
+      - ./volumes/rpinvr/storage:/usr/src/app/storage
+      - /etc/localtime:/etc/localtime:ro
+    restart: unless-stopped
+    network_mode: "host"

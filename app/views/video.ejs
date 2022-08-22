@@ -1,0 +1,19 @@
+<%- include('includes/head.ejs') %>
+</head>
+
+<body class="d-flex flex-column h-100">
+    
+    <%- include('includes/header.ejs') %>
+    
+    <div class="container py-4">
+        
+        <%- include('includes/breadcrumb.ejs') %>
+
+        <video width="100%" controls>
+            <source src="<%= videoUrl %>">
+        </video>
+    </div>
+
+    <%- include('includes/video-keys.ejs') %>
+    <%- include('includes/footer.ejs') %>
+    <%- include('includes/end.ejs') %>
