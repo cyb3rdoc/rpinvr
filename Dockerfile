@@ -1,27 +1,26 @@
-ROM node:alpine
+FROM node:alpine
 
 RUN apk update \
-  && apk upgrade \
   && apk add --no-cache \
   ffmpeg \
   && rm -rf /var/cache/apk/*
 
+#RUN ln -s /usr/local/bin /usr/local/sbin
+
 # Create app directory
-WORKDIR /usr/src/app
+WORKDIR /app
 
 # Install app dependencies
 COPY ./app/package*.json ./
 
 RUN npm install \
-  && npm audit fix \
-  && npm install -g pm2
-# If you are building your code for production
-# RUN npm ci --only=production
+  && npm install -g pm2 \
+  && npm prune --omit=dev
 
 # Bundle app source
 COPY ./app/ ./
 
-VOLUME ["/usr/src/app/config", "/storage"]
+VOLUME ["/app/config", "/app/storage"]
 
 EXPOSE 3000 3001
 

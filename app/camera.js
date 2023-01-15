@@ -135,7 +135,7 @@ class CameraStream {
             this.ffmpegProcess.on('exit', (code) => {
                 this.log(`[EXIT] code ${code}`);
             });
-            
+
             this.ffmpegProcess.on('error', (err) => {
                 this.log(`[ERROR]`, err);
             });

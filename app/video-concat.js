@@ -36,7 +36,7 @@ function runCombinationProcess(directory, listName = 'files.txt') {
             log(`[EXIT] code ${code}`);
             return resolve(code == 0);
         });
-        
+
         ffmpegProcess.on('error', (err) => {
             log(`[ERROR]`, err);
             return reject(err)

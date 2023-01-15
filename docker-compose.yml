@@ -5,8 +5,8 @@ services:
     hostname: rpinvr
     image: hum8lefool/rpinvr
     volumes:
-      - ./volumes/rpinvr/config:/usr/src/app/config
-      - ./volumes/rpinvr/storage:/usr/src/app/storage
+      - ./volumes/rpinvr/config:/app/config
+      - ./volumes/rpinvr/storage:/app/storage
       - /etc/localtime:/etc/localtime:ro
     restart: unless-stopped
     network_mode: "host"
