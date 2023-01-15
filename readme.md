@@ -14,7 +14,7 @@ Clone the docker branch of the repo to build your own image.
 You can also use prebuilt image hum8lefool/rpinvr with docker-compose.yml.
 
 Mount following volumes to update camera settings and access or backup stored video files.
-1. /usr/src/app/config
-2. /usr/src/app/storage
+1. /app/config
+2. /app/storage
 
 Credits: [Tom Humphries](https://github.com/TomHumphries/simple-nvr)
