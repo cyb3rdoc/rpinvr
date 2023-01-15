@@ -1,7 +1,7 @@
 # Simple Network Video Recorder  in Node.js & Docker
 This is a simple Network Video Recorder (NVR) that is designed to run on cheap hardware, such as a Raspberry Pi with a hard drive. 24/7 video streams from network cameras are saved, and the recorded files are browsable from a basic web interface.
 
-![Camera locations](/app/images/camera-locations.png)
+![Camera locations](/images/camera-locations.png)
 
 The project is deliberately bare-bones, and configuration is done through `.json` files.
 
