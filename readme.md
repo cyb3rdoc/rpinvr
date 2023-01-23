@@ -11,7 +11,7 @@ The camera video streams are saved in 5 minute files (to prevent long periods of
 
 ## Use docker-compose.yml OR build image using Dockerfile
 Clone the docker branch of the repo to build your own image.
-You can also use prebuilt image hum8lefool/rpinvr with docker-compose.yml.
+You can also use prebuilt image cyb3rdoc/rpinvr with docker-compose.yml.
 
 Mount following volumes to update camera settings and access or backup stored video files.
 1. /app/config
