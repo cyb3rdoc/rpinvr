@@ -3,7 +3,7 @@ services:
   rpinvr:
     container_name: rpinvr
     hostname: rpinvr
-    image: hum8lefool/rpinvr
+    image: cyb3rdoc/rpinvr:latest
     volumes:
       - ./volumes/rpinvr/config:/app/config
       - ./volumes/rpinvr/storage:/app/storage

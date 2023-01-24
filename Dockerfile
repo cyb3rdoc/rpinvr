@@ -1,23 +1,21 @@
-FROM node:alpine
+FROM node:latest
 
-RUN apk update \
-  && apk add --no-cache \
+RUN set -ex \
+  && apt-get update \
+  && DEBIAN_FRONTEND=noninteractive apt-get install -y \
   ffmpeg \
-  && rm -rf /var/cache/apk/*
+  && apt-get clean \
+  && apt-get autoremove \
+  && rm -rf /var/lib/apt/lists/* /tmp/* /var/tmp/* ~/.cache
 
-#RUN ln -s /usr/local/bin /usr/local/sbin
-
-# Create app directory
 WORKDIR /app
 
-# Install app dependencies
 COPY ./app/package*.json ./
 
 RUN npm install \
   && npm install -g pm2 \
   && npm prune --omit=dev
 
-# Bundle app source
 COPY ./app/ ./
 
 VOLUME ["/app/config", "/app/storage"]
